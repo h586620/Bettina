@@ -1,0 +1,92 @@
+package no.hvl.dat100.jplab12.oppgave1;
+
+import no.hvl.dat100.jplab12.common.TODO;
+
+public abstract class Innlegg {
+	
+	// deklarering av objektvariable
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
+	
+	public Innlegg() {
+		
+	}
+	// oppretter konstruktører 
+	public Innlegg(int id, String bruker, String dato) {
+
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		likes = 0;
+		
+	}
+
+	public Innlegg(int id, String bruker, String dato, int likes) {
+
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
+		
+	}
+	
+	// Get - set metode
+	public String getBruker() {
+		return bruker;
+		
+	}
+
+	public void setBruker(String bruker) {
+		this.bruker = bruker;
+		
+	}
+
+	public String getDato() {
+		return dato;
+		
+	}
+
+	public void setDato(String dato) {
+		this.dato = dato;
+
+	}
+
+	public int getId() {
+		return id;
+		
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getLikes() {
+		return likes;
+		
+	}
+	
+	// Øker antall likes med 1 for innlegget med 1
+	public void doLike () {
+		likes++;
+
+	}
+	// Retunerer true om innlegget har lik id som innlegget innlegg
+	public boolean erLik(Innlegg innlegg) {
+		boolean idlik = false;
+		
+		if(id == innlegg.getId()) {
+			idlik = true;
+		}
+		return idlik;
+	}
+	
+	@Override
+	public String toString() {
+	
+		String inlegget = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		return inlegget;
+				
+	}
+}
