@@ -1,0 +1,39 @@
+package no.hvl.dat100.jplab12.oppgave2;
+
+import no.hvl.dat100.jplab12.common.TODO;
+
+public class Bilde extends Tekst {
+
+	// TODO - objektvariable
+	
+	private String url;
+	public Bilde(int id, String bruker, String dato, String tekst, String url) {
+		super(id, bruker, dato, tekst);
+		this.url = url;
+	}
+	
+	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
+		super(id, bruker, dato, likes, tekst);
+		this.url = url;
+	}
+	
+	// Get - set metodene
+	
+	public String getUrl() {
+		return url;
+
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+
+	}
+
+	@Override
+	public String toString() {
+		
+		String bildet = "\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n" + url + "\n";
+		return bildet;
+
+	}
+}
